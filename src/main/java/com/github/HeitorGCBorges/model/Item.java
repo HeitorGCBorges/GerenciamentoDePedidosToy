@@ -1,28 +1,33 @@
 package com.github.HeitorGCBorges.model;
 
 public class Item {
-    private String nomeItem;
+    private String nome;
     private double preco;
 
-    public Item(String nomeItem, double preco){
-        this.nomeItem = nomeItem;
+    public Item(String nome, double preco){
+        this.nome = nome;
         this.preco = preco;
     }
 
-    public void setNomeItem(String nomeItem){
-        this.nomeItem = nomeItem;
+    public void setnome(String nome){
+        this.nome = nome;
     }
 
-    public String getNomeItem(){
-        return nomeItem;
+    public String getnome(){
+        return nome;
     }
 
     public void setPreco(double preco){
-        this.preco = preco;
+        if (preco >= 0){
+            this.preco = preco;
+        }else {
+            throw new IllegalArgumentException("preço não pode ser negativo");
+        }
+
     }
 
     public double getPreco(){
         return preco;
     }
-    
+
 }

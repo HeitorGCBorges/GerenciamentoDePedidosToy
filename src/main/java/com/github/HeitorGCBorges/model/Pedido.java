@@ -5,12 +5,12 @@ import java.util.List;
 
 public class Pedido {
     private int id;
-    private String nomeCliente;
+    private String nome;
     private List<Item> itens;
 
-    public Pedido(int id, String nomeCliente) {
+    public Pedido(int id, String nome) {
         this.id = id;
-        this.nomeCliente = nomeCliente;
+        this.nome = nome;
         this.itens = new ArrayList<>();
     }
 
@@ -22,12 +22,12 @@ public class Pedido {
         return id;
     }
 
-    public void setNomeCliente(String nomeCliente){
-        this.nomeCliente = nomeCliente;
+    public void setNome(String nome){
+        this.nome = nome;
     }
 
-    public String getNomeCliente(){
-        return nomeCliente;
+    public String getNome(){
+        return nome;
     }
 
     public List<Item> getItens(){
