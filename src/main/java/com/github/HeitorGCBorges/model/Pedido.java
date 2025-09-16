@@ -1,6 +1,7 @@
 package com.github.HeitorGCBorges.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Pedido {
@@ -31,7 +32,23 @@ public class Pedido {
     }
 
     public List<Item> getItens(){
-        return itens;
+        return Collections.unmodifiableList(itens);
+    }
+
+    public void adicionarItem(Item item){
+        itens.add(item);
+    }
+
+    public void removerItem(Item item){
+        itens.remove(item);
+    }
+
+    public double calcularTotal(){
+        double total = 0;
+        for (Item i : itens){
+            total += i.getPreco();
+        }
+        return total;
     }
 
 }

@@ -30,4 +30,8 @@ public class Item {
         return preco;
     }
 
+    @Override
+    public String toString() {
+        return nome + " - R$ " + preco;
+    }
 }
