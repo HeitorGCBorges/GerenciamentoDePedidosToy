@@ -19,4 +19,11 @@ public class PedidoDAO {
     public List<Pedido> listarPedidos(){
         return pedidos;
     }
+
+    public Pedido buscarPedidoPorId(int id){
+        return pedidos.stream()
+                .filter(pedido -> pedido.getId() == id)
+                .findFirst()
+                .orElse(null);
+    }
 }
